@@ -1,0 +1,19 @@
+[ap14016@students2 Prob3++.20121225]$ root -l
+root [0] TFile f1("Analyticmat.root","read");
+root [1] TBrowser tb;
+root [2] TH1D *myhist;
+root [3] f1.ls()
+TFile**         Analyticmat.root
+ TFile*         Analyticmat.root
+  OBJ: TH1D     lmu2eE  P(#nu_{#mu} #rightarrow #nu_{e}) L = 295 : 0 at: 0x3ce8c40
+  OBJ: TH1D     lmu2eL  P(#nu_{#mu} #rightarrow #nu_{e}) E = 0.004 : 0 at: 0x3804eb0
+  OBJ: TH1D     lmu2eE  P(#nu_{#mu} #rightarrow #nu_{e}) L = 295 : 0 at: 0x3ef2cc0
+  KEY: TH1D     lmu2eE;1        P(#nu_{#mu} #rightarrow #nu_{e}) L = 295
+  KEY: TH1D     lmu2eL;1        P(#nu_{#mu} #rightarrow #nu_{e}) E = 0.004
+root [4] TH1D * mat = (TH1D*)f1.Get("lmu2eE")
+(TH1D *) 0x3ce8c40
+root [5] mat->GetYaxis()->SetRangeUser(-0.05,0.05)
+root [6] mat->GetXaxis()->SetRangeUser(0,2)
+root [7] mat->Draw();
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name Canvas_1
+root [8] Info in <TCanvas::Print>: file /home/ap14016/Prob3++.20121225/numutonuemat.png has been created

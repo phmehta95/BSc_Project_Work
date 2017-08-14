@@ -1,0 +1,18 @@
+[ap14016@students2 StephaneMacroPlots]$ TFile f1("numtubesdigihitbinary.root","read");
+bash: syntax error near unexpected token `('
+[ap14016@students2 StephaneMacroPlots]$ root -l
+root [0] TFile f1("numtubesdigihitbinary.root","read");
+root [1] THID *myhist;
+Error: Symbol THID is not defined in current scope  (tmpfile):1:
+Error: Symbol myhist is not defined in current scope  (tmpfile):1:
+*** Interpreter error recovered ***
+root [2] TH1D *myhist;
+root [3] TCanvas *Canvas_1 = (TCanvas*)f1.Get("Canvas_1");
+root [4] myhist1 = (TH1D*)Canvas_1->GetPrimitive("hNumTubesDigiHit");
+root [5] myhist1->GetXaxis()->SetRangeUser(1500,2500)
+root [6] myhist1->Draw();
+root [7] myhist1->Draw();
+root [8] TBrowser tb;
+root [9] myhist1->Draw();
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name Canvas_1
+root [10] Info in <TCanvas::SaveAs>: ROOT file /home/ap14016/myproject/WCSim/sample-root-scripts/StephaneMacroPlots/numtubesdigihitbinary.root has been created
